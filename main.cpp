@@ -1,10 +1,8 @@
 #include <iostream>
 #include "Dialogue.h"
 
-int main() {
-    std::ifstream in("abc.txt");
-    yyFlexLexer a(&in);
-    while (in.good())
-        std::cout << a.yylex() << " " << a.YYText() << std::endl;
+int main(int argc, char *argv[]) {
+    lab1::Dialogue d(argc, argv);
+    d.run();
     return 0;
 }
