@@ -34,16 +34,16 @@ namespace lab1 {
 
         void incStat(const std::string &hash);
 
+        std::string genInacceptedStr(int len);
+
+        std::string genAcceptedStr(int len);
+
     public:
         Dialogue(int argc, char *argv[]);
 
         void run();
 
         ~Dialogue();
-
-        std::string genInacceptedStr(int len);
-
-        std::string genAcceptedStr(int len);
 
         void runTiming();
     };

@@ -514,7 +514,7 @@ static const flex_int16_t yy_chk[138] =
 
 static const flex_int16_t yy_rule_linenum[9] =
     {   0,
-        7,    8,   10,   13,   14,   15,   19,   20
+        7,    8,   10,   13,   14,   15,   18,   19
     } ;
 
 /* The intent behind this definition is that it'll catch
@@ -818,7 +818,7 @@ return 0;
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 #line 9 "flex.l"
-return 0;
+return -1;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
@@ -846,22 +846,22 @@ YY_RULE_SETUP
 #line 15 "flex.l"
 {BEGIN(INITIAL); return 0;}
 	YY_BREAK
-case YY_STATE_EOF(HASH):
-#line 16 "flex.l"
-{BEGIN(INITIAL); return 0;}
-	YY_BREAK
 
 
 case 7:
 YY_RULE_SETUP
-#line 19 "flex.l"
+#line 18 "flex.l"
 ;
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
-#line 20 "flex.l"
+#line 19 "flex.l"
 BEGIN(INITIAL);
+	YY_BREAK
+case YY_STATE_EOF(TAIL):
+#line 20 "flex.l"
+return -1;
 	YY_BREAK
 
 case 9:
@@ -870,7 +870,7 @@ YY_RULE_SETUP
 ECHO;
 	YY_BREAK
 #line 873 "lex.yy.cc"
-case YY_STATE_EOF(TAIL):
+case YY_STATE_EOF(HASH):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:

@@ -94,12 +94,15 @@ namespace lab1 {
             std::cout << "Enter your strings below" << std::endl;
         std::list<std::string> result;
         yyFlexLexer checker(in.is_open() ? &in : &std::cin);
-        while (in.good()) {
+        checker.set_debug(5);
+        do {
             res = checker.yylex();
-            result.push_back(formResult(checker.YYText(), res));
-            if (res)
+            if (res == -1)
+                break;
+            result.push_back(formResult("", res));
+            if (res == 1)
                 incStat(checker.YYText());
-        }
+        } while(res >= 0);
         return result;
     }
 

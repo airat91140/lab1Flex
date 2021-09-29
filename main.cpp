@@ -2,7 +2,14 @@
 #include "Dialogue.h"
 
 int main(int argc, char *argv[]) {
-    lab1::Dialogue d(argc, argv);
-    d.run();
+    try
+    {
+        lab1::Dialogue dialogue(argc, argv);
+        dialogue.run();
+    }
+    catch (const std::exception &ex)
+    {
+        std::cout << "Error: " << ex.what() << std::endl;
+    }
     return 0;
 }
