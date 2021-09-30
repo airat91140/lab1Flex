@@ -94,7 +94,6 @@ namespace lab1 {
             std::cout << "Enter your strings below" << std::endl;
         std::list<std::string> result;
         yyFlexLexer checker(in.is_open() ? &in : &std::cin);
-        checker.set_debug(5);
         do {
             res = checker.yylex();
             if (res == -1)
