@@ -4,7 +4,7 @@
 
 %%
 <INITIAL>{
-^(ed2k:\/\/\|file\|[A-Za-z+-_.]+\|[0-9]+\|) BEGIN(HASH);
+^((?i:ed2k):\/\/\|file\|[A-Za-z+-_.]+\|[0-9]+\|) BEGIN(HASH);
 \n return 0;
 <<EOF>> return -1;
 . ;
