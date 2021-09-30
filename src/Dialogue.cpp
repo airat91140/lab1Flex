@@ -131,7 +131,7 @@ namespace lab1 {
         std::stringstream str;
         srand(time(nullptr));
         yyFlexLexer checker(&str);
-        for (int l = 1000000; l <= 10000000; l += 500000) {
+        for (int l = 1000; l <= 10000; l += 500) {
             {
                 duration = steady_clock::duration::zero();
                 str << genAcceptedStr(l) << std::endl;
